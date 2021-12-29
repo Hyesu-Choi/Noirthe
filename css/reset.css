@@ -1,0 +1,46 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Karla:wght@300;400;500;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Merriweather:wght@400;700&display=swap');
+
+:root {
+    --main-color : #67491c;
+    --font-p-color : #fff;
+    --background-color : #efd6ae;
+    --background-second-color : #fcf0da;
+    --background-gradient : repeating-linear-gradient(-60deg, rgba(255,255,255,0.5), rgba(255,255,255,0.5) 1px, transparent 0, transparent 100px, transparent 400px);
+}
+body {
+    font-family: 'Karla', sans-serif;
+    font-size: 16px ;
+}
+h1, h2, h3, h4, h5, h6 {
+    font-family: 'Merriweather', serif;
+}
+
+* { 
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+ul li {
+    list-style: none;
+}
+a { 
+    display: block;
+    text-decoration: none;
+}
+img {
+    display: block;
+    border: 0;
+    outline: 0;
+}
+.button {
+    font-family: 'Poppins', sans-serif;
+    background: var(--main-color); 
+    color: var(--font-p-color);
+}
+.button:hover {
+    background: #fff;
+    color: var(--main-color);
+}
+
