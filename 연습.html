@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fade & Out Image Slide</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+        }
+        .slide1, .slide2, .slide3 {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+        }
+        h1 {
+            text-transform: uppercase;
+            color: #fff;
+            text-align: center;
+            margin-top: 250px;
+            font-size: 5rem;
+        }
+        .slide1 {
+            background-image: url(imgs/invalid-account-AhIQL2CKq7g-unsplash.jpg);
+            background-repeat: no-repeat;
+            background-size: cover;
+            animation: fade1 10s infinite;
+        }
+        .slide2 {
+            background-image: url(imgs/joeyy-lee-BVQjyuTP1Ho-unsplash.jpg);
+            background-repeat: no-repeat;
+            background-size: cover;
+            animation: fade2 10s infinite;
+        }
+        .slide3 {
+            background-image: url(imgs/joeyy-lee-onU-LlrPs8I-unsplash.jpg);
+            background-repeat: no-repeat;
+            background-size: cover;
+            animation: fade3 10s infinite;
+        }
+        @keyframes fade1 {
+            0% { opacity: 1;}
+            25% { opacity: 0;}
+            75% { opacity: 0;}
+            100% { opacity: 1;}
+        }
+        @keyframes fade2 {
+            0% { opacity: 0;}
+            25% { opacity: 1;}
+            75% { opacity: 0;}
+            100% { opacity: 0;}
+        }
+        @keyframes fade3 {
+            0% { opacity: 0;}
+            25% { opacity: 0;}
+            75% { opacity: 1;}
+            100% { opacity: 0;}
+        }
+        
+
+    </style>
+</head>
+<body>
+    <div class="slider">
+        <div class="slide1"><h1>Slide1</h1></div>
+        <div class="slide2"><h1>Slide2</h1></div>
+        <div class="slide3"><h1>Slide3</h1></div>
+    </div>
+    
+</body>
+</html>
