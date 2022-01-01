@@ -140,20 +140,36 @@ header .button {
 /* ========== Gallery ========== */
 .gallery {
     width: 100%;
-    height: 100%;
+    height: 1350px;
+    padding: 100px 0;
     background: var(--background-second-color);
 }
 .gal-grid-container {
     width: 70%;
-    padding: 5% 0;
+    height: 100%;
     margin: 0 auto;
-    background: pink;
-    display: grid;
-    grid-template-columns: 4.7fr 4.7fr;
-    justify-content: space-between;
-    grid-gap: 1rem;
+    position: relative;
+}
+.gal-grid-container div { width: 48%;}
+.gal-grid-container img { width: 100%;}
+.gal-grid-container div:nth-child(1) {
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+.gal-grid-container div:nth-child(2) {
+    position: absolute;
+    top: 0;
+    right: 0;
 }
 
-
-.gal-grid-container img { width: 100%;}
-
+.gal-grid-container div:nth-child(3) {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+}
+.gal-grid-container div:nth-child(4) {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+}
