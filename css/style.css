@@ -1,17 +1,14 @@
 /* ========== Header ==========  */
-.hb-warp {
-    width: 100%;
-    height: 850px;
-    background:#efd6ae;
-    background-image: repeating-linear-gradient(-60deg, rgba(255,255,255,0.5), rgba(255,255,255,0.5) 1px, transparent 0, transparent 100px, transparent 400px);
-}
 header {
-    height: 10%;
-    width: 80%;
-    margin: 0 auto;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100px;
     display: flex;
     align-items: center;
-    justify-content: space-between;
+    justify-content: space-around;
+    z-index: 10;
 }
 nav ul {
     display: flex;
@@ -33,12 +30,13 @@ header .button {
 .banner {
     position: relative;
     width: 100%;
-    height: 90%;
-    padding: 50px 0;
+    padding: 120px 0 50px;
     overflow: hidden;
+    background:#efd6ae;
+    background-image: repeating-linear-gradient(-60deg, rgba(255,255,255,0.5), rgba(255,255,255,0.5) 1px, transparent 0, transparent 100px, transparent 400px);
 }
 .banner div { float: left; height: 100%; }
-.banner div:first-child { width: 20%; padding-top: 220px;}
+.banner div:first-child { width: 20%; height: 100%; padding-top: 220px;}
 .banner div:first-child img {
     width: 100%;
 }
@@ -87,29 +85,28 @@ header .button {
 .about {
     position: relative;
     width: 100%;
-    height: 650px;
     padding: 0 30px;
     background: var(--background-second-color);
     overflow: hidden;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 }
-.about img {
-    display: inline-block;
-    width: 55%;
-    height: 90%;
-    margin-top: 2%;
+.about .about-img { width: 65%; }
+.about-img img {
+    width: 100%;
 }
-.about h2 {
+
+.about-img h2 {
     position: absolute;
-    top :8% ;
-    left: 5%;
+    top :11% ;
+    left: 6%;
     font-size: 65px;
     color: var(--main-color);
     text-shadow: 5px 3px 3px rgb(116, 115, 115);
 }
-.about-txtBox {
-    float: right;
+.about .about-txtBox {
     width: 35%;
-    height: 100%;
     padding: 200px 75px;
 }
 .about-txtBox h3 {
@@ -142,11 +139,9 @@ header .button {
     display: grid;
     width: 100%;
     height: 100%;
-    grid-template-columns: repeat(3, 1fr);
-    grid-auto-rows: 50%;
+    grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
     overflow: hidden;
 }
-
 
 .product-grid-container div:nth-child(2n-1) h5 {
     margin-top: 30%;
@@ -169,7 +164,6 @@ header .button {
 /* ========== Gallery ========== */
 .gallery {
     width: 100%;
-    height: 1500px;
     padding: 100px 0;
     background: var(--background-second-color);
 }
@@ -186,12 +180,14 @@ header .button {
     width: 70%;
     height: 90%;
     margin: 0 auto;
+    overflow: hidden;
 }
 .gal-grid-left {
     display: grid;
     grid-template-rows: 65% 2% auto;
     width: 100%;
     height: 100%;
+    overflow: hidden;
 }
 
 .gal-grid-right {
@@ -199,6 +195,7 @@ header .button {
     grid-template-rows: 33% 2% auto;
     width: 100%;
     height: 100%;
+    overflow: hidden;
 }
 
 
@@ -237,7 +234,7 @@ header .button {
 }
 .form-wrap .button {
     display: inline-block;
-    padding: 15px 60px;
+    padding: 15px 80px;
 }
 .form-wrap .button:hover {
     background: #67491c;
@@ -276,4 +273,80 @@ footer div:nth-child(2) i {
 footer div:nth-child(3) p {
     padding-bottom: 10px;
     color: var(--main-color);
+}
+
+/* 미디어 쿼리  */
+@media (max-width:1024px) {
+    body {
+        font-size: 14px;
+    }
+    header {
+        padding: 0 15px;
+        background: pink;
+    }
+    nav ul li a {
+        padding: 3px 15px;
+    }
+
+    .banner {
+        padding: 120px 0 20px;
+    }
+    .banner div:nth-child(2) img {
+        width: 72%;
+    }
+    .banner div:nth-child(2) h2 {
+        top: 30%;
+        left: 3%;
+        font-size: 50px;
+    }
+    .banner div:nth-child(2) h3 {
+        top: 45%;
+        left: 3%;
+        font-size: 25px;
+        line-height: 35px;
+    }
+
+    .about .about-txtBox {
+        width: 35%;
+        padding: 100px 40px; 
+    }
+    .about-img h2 {
+        position: absolute;
+        top: 8%;
+        left: 5%;
+        font-size: 53px;
+        letter-spacing: -2px; 
+    }
+    .about-txtBox .button {
+        display: inline-block;
+        margin-top: 80px;
+        margin-left: 35px;
+        padding: 10px 35px; 
+    }
+    .product h3 {
+        padding-bottom: 50px;
+    }
+    .product-grid-container {
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    }
+    .gallery {
+        padding: 80px 0;
+    }
+
+    
+
+    
+
+
+
+}
+@media (max-width:768px) {
+    header {
+        background: yellow;
+    }
+}
+@media (max-width:480px) {
+    header {
+        background: yellowgreen;
+    }
 }
