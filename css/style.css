@@ -25,6 +25,7 @@ nav ul li:hover a {
 header .button {
     padding: 10px 25px;
 }
+.trigger { display: none;}
 
 /* Banner  */
 .banner {
@@ -85,29 +86,35 @@ header .button {
 .about {
     position: relative;
     width: 100%;
-    padding: 0 30px;
+    padding: 80px 0;
     background: var(--background-second-color);
     overflow: hidden;
     display: flex;
     justify-content: space-between;
     align-items: center;
 }
-.about .about-img { width: 65%; }
+.about .about-img {
+    position: relative;
+    width: 65%;
+}
 .about-img img {
     width: 100%;
 }
 
 .about-img h2 {
     position: absolute;
-    top :11% ;
-    left: 6%;
+    top :5% ;
+    left: 5%;
     font-size: 65px;
     color: var(--main-color);
     text-shadow: 5px 3px 3px rgb(116, 115, 115);
 }
 .about .about-txtBox {
     width: 35%;
-    padding: 200px 75px;
+}
+.about-txtBox .txtBox-text {
+    width: 80%;
+    margin: 0 auto;
 }
 .about-txtBox h3 {
     font-family: 'Poppins', sans-serif;
@@ -115,8 +122,7 @@ header .button {
 }
 .about-txtBox .button {
     display: inline-block;
-    margin-top: 80px;
-    margin-left: 60px;
+    margin-top: 50px;
     padding: 10px 40px;
 }
 
@@ -124,7 +130,7 @@ header .button {
 .product {
     width: 100%;
     height: auto;
-    padding: 80px 0 0;
+    padding: 100px 0 0;
     background:var(--background-color);
     overflow: hidden;
 }
@@ -139,7 +145,7 @@ header .button {
     display: grid;
     width: 100%;
     height: 100%;
-    grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+    grid-template-columns: repeat(3, 1fr);
     overflow: hidden;
 }
 
@@ -176,11 +182,15 @@ header .button {
 }
 .gal-grid-warp {
     display: grid;
-    grid-template-columns: 49% 2% 49%;
-    width: 70%;
-    height: 90%;
+    grid-template-columns: 49% 2% auto;
+    width: 80%;
+    height: 100%;
     margin: 0 auto;
     overflow: hidden;
+}
+.gallery img {
+    width: 100%;
+    
 }
 .gal-grid-left {
     display: grid;
@@ -213,7 +223,7 @@ header .button {
     text-shadow: 1px 1px 2px rgba(0,0,0,.8);
 }
 .contact .form-wrap {
-    width: 70%;
+    width: 80%;
     margin: 0 auto;
     padding: 50px;
     background: #fff;
@@ -264,7 +274,7 @@ footer {
     background: var(--background-second-color);
     text-align: center;
 }
-footer div:nth-child(2) i {
+footer .sns i {
     padding: 10px 25px;
     color: var(--main-color);
     font-size: 25px;
@@ -305,46 +315,132 @@ footer div:nth-child(3) p {
         font-size: 25px;
         line-height: 35px;
     }
-
-    .about .about-txtBox {
-        width: 35%;
-        padding: 100px 40px; 
+    .about {
+        padding: 40px 0;
     }
     .about-img h2 {
-        position: absolute;
-        top: 8%;
-        left: 5%;
         font-size: 53px;
         letter-spacing: -2px; 
     }
     .about-txtBox .button {
-        display: inline-block;
-        margin-top: 80px;
-        margin-left: 35px;
-        padding: 10px 35px; 
+        padding: 10px 30px; 
     }
     .product h3 {
         padding-bottom: 50px;
     }
     .product-grid-container {
-        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        grid-template-columns: repeat(3, 1fr);
     }
-    .gallery {
-        padding: 80px 0;
+    .product-grid-container div:nth-child(2n-1) h5 {
+        margin-top: 30%;
+        font-size: 45px;
     }
-
-    
-
-    
-
+    footer .sns i { padding: 10px 15px; }
 
 
 }
 @media (max-width:768px) {
     header {
+        height: 70px;
+        padding: 0 30px;
         background: yellow;
+        justify-content: space-between;
     }
-}
+    header nav { display: none;}
+    header > a { display: none;}
+    header .trigger { 
+        display: block;
+        position: relative;
+        width: 30px;
+        height: 15px;
+    }
+    header .trigger span {
+        width: 100%;
+        height: 1px;
+        background: #444;
+    }
+    header .trigger span:nth-child(1) {
+        position: absolute;
+        top: 0;
+        left: 0;
+    }
+    header .trigger span:nth-child(2) {
+        position: absolute;
+        top: 50%;
+        left: 0;
+    }
+    header .trigger span:nth-child(3) {
+        position: absolute;
+        top: 100%;
+        left: 0;
+    }
+    .banner {
+        padding: 100px 0 30px ;
+    }
+    .banner div:nth-child(1) { display: none;}
+    .banner div:nth-child(3) { display: none;}
+    .banner div:nth-child(2) { width: 100%;}
+    .banner div:nth-child(2) img { width: 55%;}
+    .banner div:nth-child(2) h2 {
+        top: 23%;
+        left: 5%;
+        font-size: 45px;
+    }
+    .banner div:nth-child(2) h3 {
+        top: 43%;
+        left: 8%;
+        font-size: 22px;
+    }
+
+    .about {
+        flex-direction: column;
+    }
+    .about .about-img {
+        width: 90%;
+    }
+    .about .about-img h2 {
+        font-size: 45px;
+    }
+    .about .about-txtBox {
+        width: 90%;
+        margin-top: 50px;
+    }
+    .about .about-txtBox .button {
+        margin-top: 35px;
+    }
+    .product {
+        padding: 60px 0 0;
+    }
+    .product h3 {
+        font-size: 40px;
+    }
+
+    .product-grid-container {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    .product-grid-container div:nth-child(2n-1) h5 {
+        margin-top: 35%;
+        font-size: 38px;
+    }
+    .gallery {
+        padding: 60px 0;
+    }
+    .gallery h3 {
+        font-size: 40px;
+    }
+    .gal-grid-warp img {
+        width: 100%;
+    }
+    .gal-grid-warp {
+        display: block;
+        overflow: hidden;
+    }
+    .gal-grid-right {
+        grid-auto-flow: dense;
+    }
+
+
+
 @media (max-width:480px) {
     header {
         background: yellowgreen;
